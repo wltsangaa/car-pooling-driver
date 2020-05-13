@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>slides</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding>
+  <ion-slides pager="true" [options]="slideOpts" (ionSlideDidChange)="sliderChanges($event)">
+    <ion-slide>
+      <div>
+        <img src="assets/slides7.png">
+        <div>
+          <h1 class="textBold">Accept Car Request</h1>
+          <span class="textsliderfont">register as a driver and accepting jobs </span>
+        </div>
+        <div padding-vertical padding-horizontal margin-horizontal margin-vertical>
+          <ion-button fill="clear" class="textSmall" color="medium" (click)="skip()">Skip</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/realtimetracking.png" alt="" class="liveTrackingImg">
+        <div padding-top>
+          <h1 class="textBold">RealTime Tracking</h1>
+          <span class="textsliderfont">realtime tracking the car with Google GPS</span>
+        </div>
+        <div padding-vertical padding-horizontal margin-horizontal margin-vertical>
+          <ion-button fill="clear" class="textSmall" color="medium" (click)="skip()">Skip</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img src="assets/earningMoney.jpg" alt="" class="liveTrackingImg">
+        <div padding-top>
+          <h1 class="textBold">Earning Money</h1>
+          <span class="textsliderfont">Earn money with your own car</span>
+
+        </div>
+        <div padding-vertical padding-horizontal margin-horizontal margin-vertical>
+          <ion-button color="primary" class="btnSubmit textBold" padding-horizontal text-uppercase
+            (click)="locationPage()">Get Started</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

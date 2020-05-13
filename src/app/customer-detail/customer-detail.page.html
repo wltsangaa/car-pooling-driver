@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>#12345</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content slot="fixed">
+  <ion-card class="userCard" no-margin *ngIf="userDeatils">
+    <ion-card-header color="light" class="userCardHeader dFlex">
+      <ion-thumbnail>
+        <img [src]="userDeatils.userImage" class="userIcon">
+      </ion-thumbnail>
+      <div padding-horizontal>
+        <div>
+          <ion-label>{{userDeatils.userName}}</ion-label>
+        </div>
+      </div>
+      <div float-right padding-start class="userPayDetails">
+        <div>
+          <ion-label class="textBold textMid"> {{userDeatils.price}}</ion-label>
+        </div>
+        <div>
+          <ion-label class="textBold lightTextColor fontSmall">{{userDeatils.distance}} KM</ion-label>
+        </div>
+      </div>
+
+
+    </ion-card-header>
+    <ion-card-content color="light" no-margin>
+      <div class="borderBottom paddingVertical">
+        <div class="detailText fontSmall" text-uppercase>Pick Up</div>
+        <ion-label class="detailsLabel textColor textBold">{{userDeatils.pickupLocation}}</ion-label>
+      </div>
+
+      <div class="borderBottom paddingVertical">
+        <div class="detailText fontSmall" text-uppercase>Drop Off</div>
+        <ion-label class="detailsLabel  textColor textBold">{{userDeatils.dropOffLocation}}</ion-label>
+      </div>
+
+      <div class="borderBottom paddingVertical">
+        <div class="detailText fontSmall" text-uppercase>Noted</div>
+        <ion-label class="detailsLabel  textColor textBold">I am a student of HKUST. Year 4 major in electrical engineering. I also own a car</ion-label>
+      </div>
+      <div class="borderBottom paddingVertical">
+        <div class="detailText fontSmall" text-uppercase>Trip Fare</div>
+
+        <ion-list no-padding no-margin>
+          <ion-item lines="none" *ngFor="let trip of tripFare" class="tripItems">
+            <h6 slot="start" class="detailsLabel  textColor textBold" no-padding no-margin>{{trip.title}}</h6>
+            <span slot="end" class="textBold">{{trip.pay}}</span>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-button class="detailsBtn userCall" (click)="userCall()">
+              <div padding class="contactDetails">
+                <ion-icon name="call" class="contactIcon"></ion-icon>
+                <span class="textBold textWhite contactTextSize">Call</span>
+              </div>
+            </ion-button>
+          </ion-col>
+
+          <ion-col>
+            <ion-button class="detailsBtn userMsg" (click)="userMessage()">
+              <div padding class="contactDetails">
+                <ion-icon name="chatbubbles" class="contactIcon"></ion-icon>
+                <span class="textBold textWhite contactTextSize">Message</span>
+              </div>
+            </ion-button>
+          </ion-col>
+
+          <ion-col>
+            <ion-button class="detailsBtn userCancel" (click)="userCancel()">
+              <div padding class="contactDetails">
+                <ion-icon name="trash" class="contactIcon"></ion-icon>
+                <span class="textBold textWhite contactTextSize">Cancel</span>
+              </div>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" text-center (click)="pickupPage()">
+    <ion-title class="footerTitle textMid textBold">Go To Pick Up</ion-title>
+  </ion-toolbar>
+</ion-footer>
